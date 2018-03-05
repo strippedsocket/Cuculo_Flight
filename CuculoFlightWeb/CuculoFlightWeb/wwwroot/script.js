@@ -35,7 +35,7 @@ var branchesList = [];
 function Branch(x,y) {
     this.X = 7;//poi dinamico
     this.Y = y;
-    //this.id = function () { return ; };
+   
    
 }
 
@@ -61,7 +61,7 @@ function moveBrances() {
                 branch.X = branch.X;//momentaneo
             } else {
                 branch.X -= 1;
-                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]).delay(2000));
+                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]).delay(2000));//questo non funziona-trovare altro metodo
             }
         
         }
