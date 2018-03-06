@@ -1,4 +1,12 @@
 ﻿//in una fase successiva dovrei generarla...
+//var gameBoard = [
+//    [, , , , , , , ],//mettere con $(#11) etc
+//    [, , , , , , , ],
+//    [, , , , , , , ],
+//    [, , , , , , , ],
+//    [, , , , , , , ]
+
+//];
 var gameBoard = [
     ["#11", "#12", "#13", "#14", "#15", "#16", "#17", "#18"],//mettere con $(#11) etc
     ["#21", "#22", "#23", "#24", "#25", "#26", "#27", "#28"],
@@ -31,9 +39,9 @@ $(document).ready(function () {
 
 /**BRANCHES**/
 var branchesList = [];
-
+//poi dinamico
 function Branch(x,y) {
-    this.X = 7;//poi dinamico
+    this.X = 7;
     this.Y = y;
    
    
@@ -46,7 +54,8 @@ function generateBranches() {
     var positionY = Math.floor((Math.random() * 4) + 0);
     branch.Y = positionY;
     $(gameBoard[branch.Y][branch.X]).append('<div class="branch"></div>');
-    //moveBrances();
+   // branchesList.push(branch);
+    moveBrances();
     //for (var i = 0; i < numberOfBranches; i++) {
     //    var branche = new Branche();
         
@@ -61,7 +70,8 @@ function moveBrances() {
                 branch.X = branch.X;//momentaneo
             } else {
                 branch.X -= 1;
-                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]).delay(2000));//questo non funziona-trovare altro metodo
+                setTimeout(function () { $(".branch").prependTo($(gameBoard[branch.Y][branch.X])); }, 3000);
+                //$(".branch").prependTo($(gameBoard[branch.Y][branch.X]));//questo non funziona-trovare altro metodo
             }
         
         }

@@ -29,14 +29,14 @@ h1 {
     width: 70px;
     height: 70px;
     background-color: brown;
-    position: relative;
+    /*position: relative;*/
     /*poi togliere da qui in poi per usare js*/
-    -webkit-animation: mymove 5s infinite;  /*Safari 4.0 - 8.0 */
-    -webkit-animation-timing-function: linear;  /*Safari 4.0 - 8.0 */
-    animation: mymove 5s infinite;
-    animation-timing-function: linear;
+    /*-webkit-animation: mymove 5s infinite;  /*Safari 4.0 - 8.0 */
+    /*-webkit-animation-timing-function: linear;  /*Safari 4.0 - 8.0 */
+    /*animation: mymove 5s infinite;
+    animation-timing-function: linear;*/
 }
- Safari 4.0 - 8.0 
+ /*Safari 4.0 - 8.0 
 @-webkit-keyframes mymove {
     from {
         right: 0px;
@@ -54,4 +54,4 @@ h1 {
 
     to {
         right: 800px;
-    }
+    }*/
