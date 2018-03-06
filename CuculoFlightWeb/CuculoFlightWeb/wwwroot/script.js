@@ -64,17 +64,17 @@ function generateBranches() {
 
 //riprendere da qui
 function moveBrances() {
-    $(document).ready(function () {
+    //$(document).ready(function () {
+    setInterval(function () {
         for (var i = 7; i >= 0; i--) {
             if (branch.X == 0) {
                 branch.X = branch.X;//momentaneo
             } else {
                 branch.X -= 1;
-                setTimeout(function () { $(".branch").prependTo($(gameBoard[branch.Y][branch.X])); }, 3000);
-                //$(".branch").prependTo($(gameBoard[branch.Y][branch.X]));//questo non funziona-trovare altro metodo
+                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]).delay(2000));//questo non funziona-trovare altro metodo
             }
         
         }
-        });
+    }, 1000 / 60);
 }
 generateBranches();
