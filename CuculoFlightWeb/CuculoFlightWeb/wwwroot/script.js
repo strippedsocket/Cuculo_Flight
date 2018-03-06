@@ -1,13 +1,4 @@
-﻿//in una fase successiva dovrei generarla...
-//var gameBoard = [
-//    [, , , , , , , ],//mettere con $(#11) etc
-//    [, , , , , , , ],
-//    [, , , , , , , ],
-//    [, , , , , , , ],
-//    [, , , , , , , ]
-
-//];
-var gameBoard = [
+﻿var gameBoard = [
     ["#11", "#12", "#13", "#14", "#15", "#16", "#17", "#18"],//mettere con $(#11) etc
     ["#21", "#22", "#23", "#24", "#25", "#26", "#27", "#28"],
     ["#31", "#32", "#33", "#34", "#35", "#36", "#37", "#38"],
@@ -39,42 +30,51 @@ $(document).ready(function () {
 
 /**BRANCHES**/
 var branchesList = [];
+//var pB = [];
 //poi dinamico
-function Branch(x,y) {
+function Branch(x,y, id) {
     this.X = 7;
     this.Y = y;
-   
-   
+    this.Id = id;
+  
 }
 
-var numberOfBranches = Math.floor((Math.random() * 30) + 10);
-var branch = new Branch();
+
 function generateBranches() {
+    var numberOfBranches = Math.floor((Math.random() * 3) + 1);
+    for (var i = 0; i < numberOfBranches; i++) {
+        var branch = new Branch();
+        branchesList.push(branch);
+        var positionY = Math.floor((Math.random() * 4) + 0);
+        branch.Y = positionY;
+        var positionedBranches = $(gameBoard[branch.Y][branch.X]).append('<div class="branch"></div>');
+        branch.Id=positionedBranches.attr("id");
+       // pB.push(positionedBranches.attr("id"));
+    }
+   
+
     
-    var positionY = Math.floor((Math.random() * 4) + 0);
-    branch.Y = positionY;
-    $(gameBoard[branch.Y][branch.X]).append('<div class="branch"></div>');
-   // branchesList.push(branch);
     moveBrances();
-    //for (var i = 0; i < numberOfBranches; i++) {
-    //    var branche = new Branche();
-        
-    //}
+    return branchesList;
 }
 
-//riprendere da qui
+
 function moveBrances() {
-    //$(document).ready(function () {
-    setInterval(function () {
-        for (var i = 7; i >= 0; i--) {
-            if (branch.X == 0) {
-                branch.X = branch.X;//momentaneo
+    setInterval(function ()
+    {
+        for (var b of branchesList) {
+            if (b.X == 0) {
+                b.X = b.X;//momentaneo
             } else {
-                branch.X -= 1;
-                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]).delay(2000));//questo non funziona-trovare altro metodo
+                b.X -= 1;
+                $("#" + b.Id).children().prependTo($(gameBoard[b.Y][b.X]));
+                b.Id -= 1;
+
             }
-        
         }
-    }, 1000 / 60);
+            
+        
+        
+    }, 2000);
 }
 generateBranches();
