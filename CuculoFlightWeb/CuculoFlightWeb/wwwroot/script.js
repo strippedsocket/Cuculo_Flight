@@ -46,7 +46,7 @@ function generateBranches() {
     var positionY = Math.floor((Math.random() * 4) + 0);
     branch.Y = positionY;
     $(gameBoard[branch.Y][branch.X]).append('<div class="branch"></div>');
-    //moveBrances();
+    moveBrances();
     //for (var i = 0; i < numberOfBranches; i++) {
     //    var branche = new Branche();
         
@@ -55,16 +55,17 @@ function generateBranches() {
 
 //riprendere da qui
 function moveBrances() {
-    $(document).ready(function () {
+    //$(document).ready(function () {
+    setInterval(function () {
         for (var i = 7; i >= 0; i--) {
             if (branch.X == 0) {
                 branch.X = branch.X;//momentaneo
             } else {
                 branch.X -= 1;
-                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]).delay(2000));//questo non funziona-trovare altro metodo
+                $(".branch").prependTo($(gameBoard[branch.Y][branch.X]));//questo non funziona-trovare altro metodo
             }
         
         }
-        });
+    }, 1000 / 60);
 }
 generateBranches();
