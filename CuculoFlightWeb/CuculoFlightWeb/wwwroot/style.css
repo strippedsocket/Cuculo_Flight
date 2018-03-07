@@ -1,42 +1,46 @@
-﻿.grid {
-    border: solid blue 1px;
-    width: 100px;
-    height: 100px;
+﻿#main {
+    border: solid grey 1px;
+    width: 800px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
+    position:relative;
 }
 
 .playgroundWidth {
     width: 800px;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
-.last {
-    margin-bottom: 30px;
-}
 
 .cuculo {
-    width:50px;
-    height:50px;
-    background-color:rosybrown;
+    width: 50px;
+    height: 50px;
+    background-color: rosybrown;
+    position: absolute;
+    left: 50px;
+    margin: 5px;
+    display: block;
 }
 
 h1 {
-    padding:30px;
+    padding: 30px;
 }
+
 .branch {
     width: 70px;
     height: 70px;
     background-color: brown;
-    /*position: relative;*/
+    position: absolute;
     /*poi togliere da qui in poi per usare js*/
     /*-webkit-animation: mymove 5s infinite;  /*Safari 4.0 - 8.0 */
     /*-webkit-animation-timing-function: linear;*/ /*Safari 4.0 - 8.0 */
     /*animation: mymove 5s infinite;
     animation-timing-function: linear;*/
 }
- /*Safari 4.0 - 8.0 
+/*Safari 4.0 - 8.0 
 @-webkit-keyframes mymove {
     from {
         right: 0px;
