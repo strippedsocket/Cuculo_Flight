@@ -37,6 +37,7 @@ function Branch(x, y, id) {
 
 
 function generateBranches() {
+    var nOfLoop;
     var numberOfBranches = Math.floor((Math.random() * 3) + 1);
     for (var i = 0; i < numberOfBranches; i++) {
         var positionY = Math.floor((Math.random() * 4) + 0);
