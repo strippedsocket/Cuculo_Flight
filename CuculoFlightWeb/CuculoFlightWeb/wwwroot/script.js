@@ -1,27 +1,58 @@
 ﻿/**CUCULO**/
-var cuculoPosition = {
-    y: 400,
-    x: 50
+//var cuculoPosition = {
+//    y: 400,
+//    x: 50
+//};
+
+
+//$("#main").append('<div class="cuculo"></div>');
+
+var cuculo = {
+    y: 0,
+    x: 0,
+    id: null,
+    CreateElement: function () {
+        this.id = Date.now();
+        var cuculoEl = $('<div id="' + this.id + '" class="cuculo"></div>');
+        $("#main").append(cuculoEl);
+    },
+    MoveElement: function (keydown) {
+       
+        if ((keydown.keyCode == 40) && ($("#" + this.id).css("bottom") > "0.5")) {
+                $("#" + this.id).animate({ bottom: "-=20px" }, "slow");//.css({ bottom: -20 });
+                //up
+        } else if ((keydown.keyCode == 38) && ($("#" + this.id).css("top") > "1")) {
+
+                $("#" + this.id).animate({ bottom: "+=20px" }, "slow");//.css({ bottom: 20 });
+
+            }
+
+        
+        }
+            
 };
 
+cuculo.CreateElement();
 
-$("#main").append('<div class="cuculo"></div>');
 
-
-$(document).ready(function () {    
-    $(document).keydown(function (event) {
-        //down
-        if ((event.keyCode == 40) && ($(".cuculo").css("bottom") > "0")) {
-           $('.cuculo').animate({ bottom: "-=20px" }, "slow");
-           //up     
-        } else if ((event.keyCode == 38) && ($(".cuculo").css("top") >"0")) {
-                
-            $(".cuculo").animate({ bottom: "+=20px" }, "slow");
-            //cuculoPosition.y += 50;
-        }
-
-    });
+$(document).keydown(function (event) {
+    cuculo.MoveElement(event);
 });
+//$(document).keydown(cuculo.MoveElement(event));
+//$(document).ready(function () {    
+//    $(document).keydown(function (event) {
+//        //down
+//        if ((event.keyCode == 40) && ($(".cuculo").css("bottom") > "0")) {
+//           $('.cuculo').animate({ bottom: "-=20px" }, "slow");
+//           //up     
+//        } else if ((event.keyCode == 38) && ($(".cuculo").css("top") >"0")) {
+                
+//            $(".cuculo").animate({ bottom: "+=20px" }, "slow");
+//            //cuculoPosition.y += 50;
+//        }
+
+//    });
+//});
 
 /**BRANCHES**/
 var branchesList = [];
@@ -75,4 +106,4 @@ function moveBrances() {
 
     }, 2000);
 }
-generateBranches();
+//generateBranches();
