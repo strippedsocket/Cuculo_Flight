@@ -71,14 +71,27 @@ function generateBranches() {
     var nOfLoop;
     var numberOfBranches = Math.floor((Math.random() * 3) + 1);
     for (var i = 0; i < numberOfBranches; i++) {
-        var positionY = Math.floor((Math.random() * 4) + 0);
-        var branch = new Branch();
-        $(branch.Y).css("top", "positionY");
-        $(branch.X).css("right", "-100");
+        var positionY = Math.floor((Math.random() * 200) + 10);
+        var branch = new Branch(0,0, null);
+        //$(branch).css("top", "positionY");
+        //$(branch).css("right", "20");
         branchesList.push(branch);
-        
-        var positionedBranches = $("#main").append('<div class="branch"></div>');
-        //branch.Id = positionedBranches.attr("id");
+        branch.Id = Date.now();
+        var positionedBranches = $("#main").append('<div id="' + branch.Id + '" class="branch"></div>');
+        #region
+        //prove su console
+        //console.log("val branch");
+        ////console.log(Object.getOwnPropertyNames(branch));
+        //const descriptor1 = Object.getOwnPropertyDescriptor(branch, 'X');
+        //console.log(descriptor1.value);
+        ////branch.Id = positionedBranches.attr("id");
+        //$("#" + branch.Id).css({ top: positionY });
+        //$("#" + branch.Id).css({ right: 20 });
+       #region
+        //$("#" + branch.Id).attr(x, branch.X);//lego l'elemento html all'oggetto js
+        //$("#" + branch.Id).attr(branch.Y);
+        //$("#" + branch.Id).attr(y, branch.Y);
+        //$("#" + branch.Id).css("right", "20");
         // pB.push(positionedBranches.attr("id"));
     }
 
@@ -92,18 +105,19 @@ function generateBranches() {
 function moveBrances() {
     setInterval(function () {
         for (var b of branchesList) {
-            if (b.X == 0) {
-                b.X = b.X;//momentaneo
-            } else {
-                b.X -= 1;
-                $("#" + b.Id).children().prependTo($(gameBoard[b.Y][b.X]));
-                b.Id -= 1;
+            //if (b.X == 0) {
+            //    b.X = b.X;//momentaneo
+            //} else {
+            //    b.X -= 1;
+                $("#" + b.Id).children().animate({ right: "+800px" }, "slow");
+                //$("#" + b.Id).children().prependTo($(gameBoard[b.Y][b.X]));
+                //b.Id -= 1;
 
-            }
+            //}
         }
 
 
 
     }, 2000);
 }
-//generateBranches();
+generateBranches();
