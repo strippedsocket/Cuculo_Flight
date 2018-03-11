@@ -69,6 +69,10 @@ function run() {
     indexSetInterval = setInterval(function () {
         for (var branchIndex in branchesList) {
             branchesList[branchIndex].MoveBranches();
+            if ((branchesList[branchIndex].Y == cuculo.Y) && (branchesList[branchIndex].X == cuculo.X)) {
+                Lose();
+            }
+            
         }
         var generetedRow = Math.floor((Math.random() * BOARD_ROWS));
         branchesList.push(new Branch(generetedRow));
@@ -76,6 +80,12 @@ function run() {
     return indexSetInterval;
 }
 
+
+function Lose() {
+    clearInterval(indexSetInterval);
+    alert("Hai perso!");
+    console.log("Looser!!");
+}
 
 $("#start").click(function () {
     indexSetInterval = run();
