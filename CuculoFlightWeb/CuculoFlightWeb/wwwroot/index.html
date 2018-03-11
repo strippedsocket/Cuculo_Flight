@@ -2,21 +2,26 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="bootstrap.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-    <script src="jquery-3.3.1.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.js"></script>
     <title>Cuculo's Flight</title>
 </head>
 <body id="move">
-    <div class="playgroundWidth">
+    <div class="playgroundWidth ">
         <h1 class="text-center">Cuculo's Flight Game</h1>
-        <div id="main" class="row"></div>
+        <div id="main" class="row">
+            <div class="wrapper">
+                <div class="sliding-background"></div>
+            </div>
+        </div>
         <div class="row">
             <button id="start" class="btn btn-primary">Start</button>
             <button id="stop" class="btn btn-primary">Stop</button>
+            <button id="reset" class="btn btn-primary pull-right" style="margin-right: 30px">Reset</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
 
