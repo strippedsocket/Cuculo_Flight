@@ -17,7 +17,7 @@ function Cuculo() {
 
 function generateRandomId() {
     return Math.floor(Math.random() * 9e6).toString(36);
-            
+
 }
 
 
@@ -44,7 +44,7 @@ $(document).keydown(function (event) {
 //passo row per settare la posizione in y
 function Branch(row) {
     this.Y = row * EL_HEIGHT;
-    this.X = BOARD_WIDTH- EL_WIDTH;
+    this.X = BOARD_WIDTH - EL_WIDTH;
     this.Id = generateRandomId();
     $("#main").append('<div id="' + this.Id + '" class="branch"> </div>');
     $("#" + this.Id).css({ top: this.Y });
@@ -65,26 +65,48 @@ var branchesList = [];
 
 var indexSetInterval = null;
 
-function run() {
+
+function run()   {
+
     indexSetInterval = setInterval(function () {
+
         for (var branchIndex in branchesList) {
+
             branchesList[branchIndex].MoveBranches();
             if ((branchesList[branchIndex].Y == cuculo.Y) && (branchesList[branchIndex].X == cuculo.X)) {
                 Lose();
+                break;
             }
-            
         }
         var generetedRow = Math.floor((Math.random() * BOARD_ROWS));
+
         branchesList.push(new Branch(generetedRow));
+        if (branchesList.length == 50) {
+            WinG();
+        }
+
+
+
+
+
+
     }, 500);
+
     return indexSetInterval;
 }
 
 
 function Lose() {
-    clearInterval(indexSetInterval);
-    alert("Hai perso!");
+    clearInterval(indexSetInterval);  
+    $("#myModal").show();
     console.log("Looser!!");
+}
+
+function WinG() {
+    clearInterval(indexSetInterval);
+    alert("pippo");
+    //$("#winModal").show();
+    console.log("You Win!!!");
 }
 
 $("#start").click(function () {
