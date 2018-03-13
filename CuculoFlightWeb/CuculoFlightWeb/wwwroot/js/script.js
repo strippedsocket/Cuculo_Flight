@@ -99,13 +99,19 @@ function run()   {
 function Lose() {
     clearInterval(indexSetInterval);  
     $("#myModal").show();
+    $('#closeBtn').click(function () {
+        //$("#myModal").hide();
+        location.reload();
+    });
     console.log("Looser!!");
 }
 
 function WinG() {
     clearInterval(indexSetInterval);
-    alert("pippo");
-    //$("#winModal").show();
+    $("#winModal").show();
+    $('#closeBtn2').click(function () {
+        location.reload();
+    });
     console.log("You Win!!!");
 }
 
