@@ -49,15 +49,34 @@ h1 {
 
 }
 
-.sliding-background {
+#bgscroll {
+    background: url("../img/repeatedBG1200x500.jpg");
+    animation-duration: 60s;
+    animation-name: bgscroll;
+    animation-iteration-count: infinite;
+    height: 500px;
+    width: 900px;
+}
+
+@keyframes bgscroll {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/*.sliding-background {
     background: url("../img/repeatedBG1200x500.jpg");
     background-repeat: repeat-x;
     height: 500px;
     width: 900px;
     animation: slide 60s linear infinite;
-}
+}*/
 
-@keyframes slide {
+/*@keyframes slide {
     0% {
         transform: translateX(-5px);
     }
@@ -65,5 +84,5 @@ h1 {
     100% {
         transform: translateX(300px);
     }
-}
+}*/
 
