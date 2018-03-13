@@ -21,9 +21,10 @@ overflow:hidden;
 
 
 .cuculo {
-    width: 50px;
-    height: 50px;
-    background-color: rosybrown;
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/cuculoColor100.png");
+    //background-color: rosybrown;
     position: absolute;
     /*left: 50px;
     margin: 5px;*/
@@ -36,11 +37,11 @@ h1 {
 
 
 .branch {
-    width: 50px;
-    height: 50px;
-    background-color: brown;
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/RamoColore100.png");
+    //background-color: brown;
     position: absolute;
-    
 }
 
 .wrapper {
@@ -49,9 +50,8 @@ h1 {
 }
 
 .sliding-background {
-    background: url("../img/repeatedBG.jpg");
+    background: url("../img/repeatedBG1200x500.jpg");
     background-repeat: repeat-x;
-    //repeat-x;
     height: 500px;
     width: 900px;
     animation: slide 60s linear infinite;

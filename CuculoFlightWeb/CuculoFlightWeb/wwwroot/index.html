@@ -10,9 +10,11 @@
     <div class="playgroundWidth ">
         <h1 class="text-center">Cuculo's Flight Game</h1>
         <div id="main" class="row">
-            <div class="wrapper">
-                <div class="sliding-background"></div>
-            </div>
+            <canvas id="canvas" width="800" height="500"></canvas>
+            
+            <!--<div class="wrapper">
+        <div class="sliding-background"></div>
+    </div>-->
         </div>
         <div class="row">
             <button id="start" class="btn btn-primary">Start</button>
@@ -26,7 +28,7 @@
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content text-center">
                 <div class="modal-header">
                     <h4 class="modal-title">Winner</h4>
                 </div>
@@ -34,7 +36,7 @@
                     <p>Hai Vinto!!</p>
                 </div>
                 <div class="modal-footer">
-                    <button  id="closeBtn2" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <input id="closeBtn2" type="button" class="btn btn-primary" data-dismiss="modal" value="Close">
                 </div>
             </div>
 
@@ -45,7 +47,7 @@
         <div class="modal-dialog" role="document">
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content text-center">
                 <div class="modal-header">
                     <h4 class="modal-title">Game Over</h4>
                 </div>
@@ -53,7 +55,7 @@
                     <p>Hai Perso!!</p>
                 </div>
                 <div class="modal-footer">
-                    <button id="closeBtn" type="button" class="btn btn-primary close" data-dismiss="modal">Close</button>
+                    <input id="closeBtn" type="button" class="btn btn-primary" data-dismiss="modal" value="Close"><!--close-->
                 </div>
             </div>
 
