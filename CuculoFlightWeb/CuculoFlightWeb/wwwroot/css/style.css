@@ -1,5 +1,6 @@
 ﻿body {
-overflow:hidden;
+    overflow: hidden;
+    font-family: 'Indie Flower', cursive;
 }
 
 
@@ -24,10 +25,7 @@ overflow:hidden;
     width: 100px;
     height: 100px;
     background-image: url("../img/cuculoColor100.png");
-    //background-color: rosybrown;
     position: absolute;
-    /*left: 50px;
-    margin: 5px;*/
     display: block;
 }
 
@@ -40,7 +38,6 @@ h1 {
     width: 100px;
     height: 100px;
     background-image: url("../img/RamoColore100.png");
-    //background-color: brown;
     position: absolute;
 }
 
@@ -49,7 +46,13 @@ h1 {
 
 }
 
-#bgscroll {
+.bgscroll1 {
+    background: url("../img/repeatedBG1200x500.jpg");
+    height: 500px;
+    width: 900px;
+}
+
+.bgscroll {
     background: url("../img/repeatedBG1200x500.jpg");
     animation-duration: 60s;
     animation-name: bgscroll;
@@ -68,21 +71,4 @@ h1 {
     }
 }
 
-/*.sliding-background {
-    background: url("../img/repeatedBG1200x500.jpg");
-    background-repeat: repeat-x;
-    height: 500px;
-    width: 900px;
-    animation: slide 60s linear infinite;
-}*/
-
-/*@keyframes slide {
-    0% {
-        transform: translateX(-5px);
-    }
-
-    100% {
-        transform: translateX(300px);
-    }
-}*/
 
